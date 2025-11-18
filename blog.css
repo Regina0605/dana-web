@@ -236,7 +236,7 @@ main, section, .container, .hero, .content {
 /* ======================= FOOTER ======================= */
 .to-top-button {
   float: right;
-  margin-top: -1.2rem;
+  margin-top: -3.5rem;
 }
 .footer-border {
   background-color: #fff;
@@ -257,6 +257,9 @@ main, section, .container, .hero, .content {
   background-color: #18c1ff;
   border: none;
   color: #fff;
+}
+.main-footer li a:hover {
+  color: rgb(229, 229, 229) !important;
 }
 
 .main-footer li a:hover {

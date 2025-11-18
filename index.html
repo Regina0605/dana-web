@@ -94,8 +94,7 @@
         </a>
     </div>
   </header>  
-
-    
+ 
   <section class="main">
     <div class="hero-info">
       <div class="web-hero-left">
@@ -1325,12 +1324,12 @@
   </div>
 
       <div class="container mt-5">
-        <div class="slider-button-wrap" style="display: flex; justify-content: flex-end;margin-top: 48px; text-align:center;margin-top:20px; margin-right: 100px;">
+        <div class="slider-button-wrap" style="display: flex; justify-content: flex-end;margin-top: 48px; text-align:center;margin-top:20px; margin-right: 100px;  padding-bottom: 30px;">
           <button id="prevBtn" style="border:none;background-color: #45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:0.3s;margin-left: 16px;">
-            <div class="icon-arrow" style="mask:url('https://a.m.dana.id/danaweb/v3/arrow.svg') center center / contain no-repeat;background-color:white;width:32px;height:32px;transform:rotate(180deg);"></div>
+             <i class="bi bi-arrow-left" style="font-size:32px;color:white;"></i>
           </button>
           <button id="nextBtn" style="border:none;background-color: #45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:0.3s;margin-left: 16px;">
-            <div class="icon-arrow" style="mask:url('https://a.m.dana.id/danaweb/v3/arrow.svg') center center / contain no-repeat;background-color:white;width:32px;height:32px;"></div>
+             <i class="bi bi-arrow-right" style="font-size:32px;color:white;"></i>
           </button>
         </div>
 
@@ -1383,12 +1382,14 @@
       </div>
 
       <div class="container">
-          <div class="slider-button-wrap" style="display: flex; justify-content: flex-end;margin-top: 48px; text-align:center;margin-top:20px; margin-right: 100px;">
-            <button id="prevBtnKeamana" style="border:none;background-color: #45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:0.3s;margin-left: 16px; margin-bottom: 20px;">
-              <div class="icon-arrow" style="mask:url('https://a.m.dana.id/danaweb/v3/arrow.svg') center center / contain no-repeat;background-color:white;width:32px;height:32px;transform:rotate(180deg);"></div>
+          <div class="slider-button-wrap" style="display: flex; justify-content: flex-end; margin-top: 20px; margin-right: 100px; text-align:center; padding-bottom: 30px;">
+            <button id="prevBtnKeamana" style="border:none;background-color:#45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;
+            cursor:pointer;transition:0.3s;margin-left:16px;margin-bottom:20px;">
+              <i class="bi bi-arrow-left" style="font-size:32px;color:white;"></i>
             </button>
-            <button id="nextBtnKeamanan" style="border:none;background-color: #45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:0.3s;margin-left: 16px; margin-bottom: 20px;">
-              <div class="icon-arrow" style="mask:url('https://a.m.dana.id/danaweb/v3/arrow.svg') center center / contain no-repeat;background-color:white;width:32px;height:32px;"></div>
+            <button id="nextBtnKeamanan" style="border:none;background-color:#45ddd9;color:white;border-radius:50%;width:80px;height:80px;display:inline-flex;align-items:center;justify-content:center;
+            cursor:pointer;transition:0.3s;margin-left:16px;margin-bottom:20px;">
+              <i class="bi bi-arrow-right" style="font-size:32px;color:white;"></i>
             </button>
           </div>
       </div>    
@@ -1590,103 +1591,99 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!---Lisensi-->
 <script id="script-lisensi">
-          $(document).ready(function(){
-              var $slider = $('.showcases-slider');
+$(document).ready(function(){
+    var $slider = $('.showcases-slider');
 
-              $slider.slick({
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              arrows: false,
-              infinite: false,
-              dots: false,
-              centerMode: false,
-              responsive: [
-                  { breakpoint: 992, settings: { slidesToShow: 2 }},
-                  { breakpoint: 600, settings: { slidesToShow: 1 }}
-              ]
-              });
+    $slider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        infinite: false,
+        dots: false,
+        centerMode: false,
+        responsive: [
+            { breakpoint: 992, settings: { slidesToShow: 2 }},
+            { breakpoint: 600, settings: { slidesToShow: 1 }}
+        ]
+    });
 
-              $('.showcases-slider').on('setPosition', function(){
-              $('.slick-list').css({
-                  'overflow': 'visible',     
-                  'padding-left': '40px',    
-                  'padding-right': '40px'    
-              });
-              });
+    $('.showcases-slider').on('setPosition', function(){
+        $('.slick-list').css({
+            'overflow': 'visible',
+            'padding-left': '40px',
+            'padding-right': '40px'
+        });
+    });
 
-              $('#prevBtn').click(function(){ $slider.slick('slickPrev'); });
-              $('#nextBtn').click(function(){ $slider.slick('slickNext'); });
+    $('#prevBtn').click(function(){ $slider.slick('slickPrev'); });
+    $('#nextBtn').click(function(){ $slider.slick('slickNext'); });
 
-              const buttons = [
-              {btn: document.getElementById('prevBtn'), icon: document.querySelector('#prevBtn .icon-arrow')},
-              {btn: document.getElementById('nextBtn'), icon: document.querySelector('#nextBtn .icon-arrow')}
-              ];
+    const buttons = [
+        {btn: document.getElementById('prevBtn'), icon: document.querySelector('#prevBtn i')},
+        {btn: document.getElementById('nextBtn'), icon: document.querySelector('#nextBtn i')}
+    ];
 
-              buttons.forEach(({btn, icon}) => {
-              btn.addEventListener('mouseenter', () => {
-                  btn.style.backgroundColor = '#FFD700';
-                  icon.style.backgroundColor = 'black'; 
-              });
-              btn.addEventListener('mouseleave', () => {
-                  btn.style.backgroundColor = '#45ddd9';
-                  icon.style.backgroundColor = 'white'; 
-              });
-              });
-          });
-  </script>
+    buttons.forEach(({btn, icon}) => {
+        btn.addEventListener('mouseenter', () => {
+            btn.style.backgroundColor = '#FFD700';
+            icon.style.color = 'black';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.backgroundColor = '#45ddd9'; 
+            icon.style.color = 'white';
+        });
+    });
+});
+</script>
+
 
 <!---keamanan-->
-  <script id="script-security">
-          $(document).ready(function(){
-              var $slider = $('.keamanan-slider');
+<script id="script-security">
+$(document).ready(function(){
+    var $slider = $('.keamanan-slider');
 
-              $slider.slick({
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              arrows: false,
-              infinite: false,
-              dots: false,
-              centerMode: false,
-              responsive: [
-                  { breakpoint: 992, settings: { slidesToShow: 2 }},
-                  { breakpoint: 600, settings: { slidesToShow: 1 }}
-              ]
-              });
+    $slider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        infinite: false,
+        dots: false,
+        centerMode: false,
+        responsive: [
+            { breakpoint: 992, settings: { slidesToShow: 2 }},
+            { breakpoint: 600, settings: { slidesToShow: 1 }}
+        ]
+    });
 
-              $('.showcases-slider').on('setPosition', function(){
-              $('.slick-list').css({
-                  'overflow': 'visible',     
-                  'padding-left': '40px',    
-                  'padding-right': '40px'    
-              });
-              });
+    $('.showcases-slider').on('setPosition', function(){
+        $('.slick-list').css({
+            'overflow': 'visible',
+            'padding-left': '40px',
+            'padding-right': '40px'
+        });
+    });
 
-              $('#prevBtnKeamana').click(function(){ $slider.slick('slickPrev'); });
-              $('#nextBtnKeamanan').click(function(){ $slider.slick('slickNext'); });
+    $('#prevBtnKeamana').click(function(){ $slider.slick('slickPrev'); });
+    $('#nextBtnKeamanan').click(function(){ $slider.slick('slickNext'); });
 
-              const buttons = [
-              {btn: document.getElementById('prevBtnKeamana'), icon: document.querySelector('#prevBtnKeamana .icon-arrow')},
-              {btn: document.getElementById('nextBtnKeamanan'), icon: document.querySelector('#nextBtnKeamanan .icon-arrow')}
-              ];
+    const buttons = [
+        {btn: document.getElementById('prevBtnKeamana'), icon: document.querySelector('#prevBtnKeamana i')},
+        {btn: document.getElementById('nextBtnKeamanan'), icon: document.querySelector('#nextBtnKeamanan i')}
+    ];
 
-              buttons.forEach(({btn, icon}) => {
-              btn.addEventListener('mouseenter', () => {
-                  btn.style.backgroundColor = '#FFD700';
-                  icon.style.backgroundColor = 'black'; 
-              });
-              btn.addEventListener('mouseleave', () => {
-                  btn.style.backgroundColor = '#45ddd9';
-                  icon.style.backgroundColor = 'white'; 
-              });
-              });
-              // Tombol Lihat Lainnya
- $('#lihatBtn').click(function(){
-  $('.extra-card:hidden').slideDown();
-  $(this).hide(); // tombol disembunyikan setelah ditekan
+    buttons.forEach(({btn, icon}) => {
+        btn.addEventListener('mouseenter', () => {
+            btn.style.backgroundColor = '#FFD700';   // kuning
+            icon.style.setProperty('color', 'black', 'important'); // panah hitam
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.backgroundColor = '#45ddd9';   // biru semula
+            icon.style.setProperty('color', 'white', 'important'); // panah putih lagi
+        });
+    });
 });
-});
-          
-  </script>
+</script>
+
 
 
   
