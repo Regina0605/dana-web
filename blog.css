@@ -159,6 +159,9 @@ main, section, .container, .hero, .content {
 .carousel-control-next {
   display: none;
 }
+.carousel-item {
+  transition: transform 1s !important;
+}
 .container {
   padding-top: 40px;
   padding-left: 100px;
